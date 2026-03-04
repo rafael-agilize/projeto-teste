@@ -1,5 +1,5 @@
+import EntryScreen from "@/components/EntryScreen";
+
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-900" />
-  );
+  return <EntryScreen />;
 }
