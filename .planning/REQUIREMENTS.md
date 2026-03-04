@@ -33,8 +33,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **ROOM-01**: User can create a room and receive a shareable code/link
 - [x] **ROOM-02**: User can join a room by entering code or clicking link
-- [ ] **ROOM-03**: Lobby shows all connected players with ready status
-- [ ] **ROOM-04**: Host can start game when at least 2 players are ready
+- [x] **ROOM-03**: Lobby shows all connected players with ready status
+- [x] **ROOM-04**: Host can start game when at least 2 players are ready
 - [x] **ROOM-05**: User enters with a nickname (no account required)
 
 ### Visual
@@ -96,8 +96,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MULT-06 | Phase 3 | Pending |
 | ROOM-01 | Phase 1 | Complete |
 | ROOM-02 | Phase 1 | Complete |
-| ROOM-03 | Phase 1 | Pending |
-| ROOM-04 | Phase 1 | Pending |
+| ROOM-03 | Phase 1 | Complete |
+| ROOM-04 | Phase 1 | Complete |
 | ROOM-05 | Phase 1 | Complete |
 | VISL-01 | Phase 3 | Pending |
 | VISL-02 | Phase 3 | Pending |

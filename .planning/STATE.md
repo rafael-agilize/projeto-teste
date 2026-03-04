@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-room-lobby-02-PLAN.md
-last_updated: "2026-03-04T20:17:00.014Z"
+stopped_at: Completed 01-03-PLAN.md (01-room-lobby Phase 1 complete)
+last_updated: "2026-03-04T20:36:55.391Z"
 last_activity: 2026-03-04 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 3
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 11
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -52,6 +52,8 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-room-lobby P01 | 3 | 2 tasks | 7 files |
 | Phase 01-room-lobby P02 | 20 | 2 tasks | 8 files |
+| Phase 01-room-lobby P03 | 8 | 1 tasks | 4 files |
+| Phase 01-room-lobby P03 | 8 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -69,6 +71,11 @@ Recent decisions affecting current work:
 - [Phase 01-room-lobby]: Room page always emits room:join — server returns existing room if player already present (idempotent join)
 - [Phase 01-room-lobby]: Socket singleton shared across EntryScreen and RoomPage to avoid duplicate connections
 - [Phase 01-room-lobby]: SocketProvider wraps room page only (not layout) to defer socket connection until needed
+- [Phase 01-room-lobby]: Lobby component owns all post-join socket listeners, keeping socket logic colocated with the rendering UI
+- [Phase 01-room-lobby]: PlayerCard fade-in animation keyed on player.id so it triggers on new player arrival, not on state changes
+- [Phase 01-room-lobby]: Lobby component owns all post-join socket listeners, keeping socket logic colocated with the rendering UI
+- [Phase 01-room-lobby]: PlayerCard fade-in animation keyed on player.id so it triggers on new player arrival, not on state changes
+- [Phase 01-room-lobby]: Crown uses Unicode chess king character with CSS gold glow — avoids importing an icon library
 
 ### Pending Todos
 
@@ -80,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T20:17:00.012Z
-Stopped at: Completed 01-room-lobby-02-PLAN.md
+Last session: 2026-03-04T20:36:55.389Z
+Stopped at: Completed 01-03-PLAN.md (01-room-lobby Phase 1 complete)
 Resume file: None

@@ -12,7 +12,7 @@ Build a competitive multiplayer Tetris game for the web in three phases: first e
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Room & Lobby** - Players can create/join rooms and gather in a lobby before the game starts
+- [x] **Phase 1: Room & Lobby** - Players can create/join rooms and gather in a lobby before the game starts (completed 2026-03-04)
 - [ ] **Phase 2: Game Engine** - A complete, correct single-player Tetris game with all classic mechanics
 - [ ] **Phase 3: Multiplayer & Polish** - Real-time competitive play with garbage lines, elimination, opponent views, and retro visuals
 
@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can paste a code or click a link and land in the same room as the creator
   4. Lobby shows every connected player's nickname and their ready status in real time
   5. Host can press Start once at least 2 players have marked themselves ready
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [ ] 01-01-PLAN.md — Project setup + entry screen with nickname input
@@ -78,6 +78,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Room & Lobby | 2/3 | In Progress|  |
+| 1. Room & Lobby | 3/3 | Complete   | 2026-03-04 |
 | 2. Game Engine | 0/4 | Planning complete | - |
 | 3. Multiplayer & Polish | 0/4 | Planning complete | - |
