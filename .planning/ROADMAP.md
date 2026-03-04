@@ -57,7 +57,13 @@ Plans:
   3. A player whose pieces reach the top is eliminated and the remaining players continue until one wins
   4. Each player's screen shows their own board large with 3 mini opponent boards visible at all times
   5. The entire game uses a retro pixel art aesthetic with vibrant arcade colors, smooth piece movement, and line clear animations on desktop browsers
-**Plans**: TBD
+**Plans:** 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Real-time multiplayer sync + garbage line mechanics
+- [ ] 03-02-PLAN.md — Multiplayer layout with main board + opponent mini boards
+- [ ] 03-03-PLAN.md — Match flow: countdown, elimination, win condition, results
+- [ ] 03-04-PLAN.md — Retro pixel art visual style, starfield, animations
 
 ## Progress
 
@@ -68,4 +74,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Room & Lobby | 0/3 | Planning complete | - |
 | 2. Game Engine | 0/TBD | Not started | - |
-| 3. Multiplayer & Polish | 0/TBD | Not started | - |
+| 3. Multiplayer & Polish | 0/4 | Planning complete | - |
