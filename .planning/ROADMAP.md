@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can paste a code or click a link and land in the same room as the creator
   4. Lobby shows every connected player's nickname and their ready status in real time
   5. Host can press Start once at least 2 players have marked themselves ready
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] 01-01-PLAN.md — Project setup + entry screen with nickname input
@@ -78,6 +78,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Room & Lobby | 0/3 | Planning complete | - |
+| 1. Room & Lobby | 1/3 | In Progress|  |
 | 2. Game Engine | 0/4 | Planning complete | - |
 | 3. Multiplayer & Polish | 0/4 | Planning complete | - |
