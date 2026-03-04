@@ -49,6 +49,13 @@ export function joinRoom(
   if (!room) {
     return { error: "Room not found" };
   }
+
+  // Player is already in the room (e.g. page reload or create-then-navigate flow)
+  const existing = room.players.find((p) => p.id === socketId);
+  if (existing) {
+    return room;
+  }
+
   if (room.players.length >= room.maxPlayers) {
     return { error: "Room is full" };
   }

@@ -8,10 +8,10 @@ import type { Room } from "@/lib/types";
 
 function RoomPageContent() {
   const params = useParams();
-  const searchParams = useSearchParams();
+  // searchParams used only to detect navigation origin; not needed for socket logic
+  useSearchParams();
   const router = useRouter();
   const code = (params.code as string).toUpperCase();
-  const isCreating = searchParams.get("create") === "true";
 
   const { socket, isConnected } = useSocket();
   const [room, setRoom] = useState<Room | null>(null);
@@ -65,11 +65,10 @@ function RoomPageContent() {
 
     setStatus("joining");
 
-    if (isCreating) {
-      socket.emit("room:create", { nickname });
-    } else {
-      socket.emit("room:join", { code, nickname });
-    }
+    // Always emit room:join — server handles already-in-room gracefully.
+    // When arriving from "Create Room" (isCreating=true), the socket already
+    // joined the room in EntryScreen; room:join will return the existing room.
+    socket.emit("room:join", { code, nickname });
 
     return () => {
       socket.off("room:joined", handleRoomJoined);
@@ -78,7 +77,7 @@ function RoomPageContent() {
       socket.off("room:player-joined", handlePlayerJoined);
       socket.off("room:player-left", handlePlayerLeft);
     };
-  }, [socket, isConnected, code, isCreating, handleRoomJoined, handleRoomError, handleRoomUpdated, handlePlayerJoined, handlePlayerLeft]);
+  }, [socket, isConnected, code, handleRoomJoined, handleRoomError, handleRoomUpdated, handlePlayerJoined, handlePlayerLeft]);
 
   const retroFont = { fontFamily: "var(--font-retro)" };
 
