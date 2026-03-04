@@ -78,36 +78,36 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GAME-01 | — | Pending |
-| GAME-02 | — | Pending |
-| GAME-03 | — | Pending |
-| GAME-04 | — | Pending |
-| GAME-05 | — | Pending |
-| GAME-06 | — | Pending |
-| GAME-07 | — | Pending |
-| GAME-08 | — | Pending |
-| GAME-09 | — | Pending |
-| GAME-10 | — | Pending |
-| MULT-01 | — | Pending |
-| MULT-02 | — | Pending |
-| MULT-03 | — | Pending |
-| MULT-04 | — | Pending |
-| MULT-05 | — | Pending |
-| MULT-06 | — | Pending |
-| ROOM-01 | — | Pending |
-| ROOM-02 | — | Pending |
-| ROOM-03 | — | Pending |
-| ROOM-04 | — | Pending |
-| ROOM-05 | — | Pending |
-| VISL-01 | — | Pending |
-| VISL-02 | — | Pending |
-| VISL-03 | — | Pending |
+| GAME-01 | Phase 2 | Pending |
+| GAME-02 | Phase 2 | Pending |
+| GAME-03 | Phase 2 | Pending |
+| GAME-04 | Phase 2 | Pending |
+| GAME-05 | Phase 2 | Pending |
+| GAME-06 | Phase 2 | Pending |
+| GAME-07 | Phase 2 | Pending |
+| GAME-08 | Phase 2 | Pending |
+| GAME-09 | Phase 2 | Pending |
+| GAME-10 | Phase 2 | Pending |
+| MULT-01 | Phase 3 | Pending |
+| MULT-02 | Phase 3 | Pending |
+| MULT-03 | Phase 3 | Pending |
+| MULT-04 | Phase 3 | Pending |
+| MULT-05 | Phase 3 | Pending |
+| MULT-06 | Phase 3 | Pending |
+| ROOM-01 | Phase 1 | Pending |
+| ROOM-02 | Phase 1 | Pending |
+| ROOM-03 | Phase 1 | Pending |
+| ROOM-04 | Phase 1 | Pending |
+| ROOM-05 | Phase 1 | Pending |
+| VISL-01 | Phase 3 | Pending |
+| VISL-02 | Phase 3 | Pending |
+| VISL-03 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 24 total
-- Mapped to phases: 0
-- Unmapped: 24 ⚠️
+- Mapped to phases: 24
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-04*
-*Last updated: 2026-03-04 after initial definition*
+*Last updated: 2026-03-04 after roadmap creation*
