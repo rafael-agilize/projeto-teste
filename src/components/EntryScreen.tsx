@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { validateNickname, saveNickname, loadNickname } from "@/lib/nickname";
+import { getSocket } from "@/lib/socket";
 
 export default function EntryScreen() {
   const router = useRouter();
@@ -11,6 +12,7 @@ export default function EntryScreen() {
   const [mode, setMode] = useState<"idle" | "joining">("idle");
   const [error, setError] = useState("");
   const [touched, setTouched] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
 
   // Load saved nickname on mount
   useEffect(() => {
@@ -44,7 +46,22 @@ export default function EntryScreen() {
       return;
     }
     saveNickname(nickname);
-    router.push("/room/create");
+    setIsCreating(true);
+
+    const socket = getSocket();
+
+    // Listen for room:created to get the code, then navigate
+    socket.once("room:created", ({ code }) => {
+      setIsCreating(false);
+      router.push(`/room/${code}?create=true`);
+    });
+
+    socket.once("room:error", ({ message }) => {
+      setIsCreating(false);
+      setError(message);
+    });
+
+    socket.emit("room:create", { nickname });
   }
 
   function handleJoinModeToggle() {
@@ -165,40 +182,40 @@ export default function EntryScreen() {
           <div className="flex gap-3 mb-4">
             <button
               onClick={handleCreateRoom}
-              disabled={!isNicknameValid}
+              disabled={!isNicknameValid || isCreating}
               className="flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider rounded transition-all"
               style={{
                 fontFamily: "var(--font-retro)",
                 fontSize: "0.6rem",
-                background: isNicknameValid
+                background: isNicknameValid && !isCreating
                   ? "linear-gradient(135deg, #00cc00, #006600)"
                   : "#1f2937",
-                color: isNicknameValid ? "#ffffff" : "#4b5563",
-                border: `2px solid ${isNicknameValid ? "#00ff00" : "#374151"}`,
-                boxShadow: isNicknameValid
+                color: isNicknameValid && !isCreating ? "#ffffff" : "#4b5563",
+                border: `2px solid ${isNicknameValid && !isCreating ? "#00ff00" : "#374151"}`,
+                boxShadow: isNicknameValid && !isCreating
                   ? "0 0 10px rgba(0,255,0,0.4)"
                   : "none",
-                cursor: isNicknameValid ? "pointer" : "not-allowed",
+                cursor: isNicknameValid && !isCreating ? "pointer" : "not-allowed",
               }}
               onMouseEnter={(e) => {
-                if (isNicknameValid) {
+                if (isNicknameValid && !isCreating) {
                   (e.target as HTMLButtonElement).style.boxShadow =
                     "0 0 20px rgba(0,255,0,0.8)";
                 }
               }}
               onMouseLeave={(e) => {
-                if (isNicknameValid) {
+                if (isNicknameValid && !isCreating) {
                   (e.target as HTMLButtonElement).style.boxShadow =
                     "0 0 10px rgba(0,255,0,0.4)";
                 }
               }}
             >
-              CREATE ROOM
+              {isCreating ? "CREATING..." : "CREATE ROOM"}
             </button>
 
             <button
               onClick={handleJoinModeToggle}
-              disabled={!isNicknameValid}
+              disabled={!isNicknameValid || isCreating}
               className="flex-1 py-3 px-4 text-xs font-bold uppercase tracking-wider rounded transition-all"
               style={{
                 fontFamily: "var(--font-retro)",
@@ -206,27 +223,27 @@ export default function EntryScreen() {
                 background:
                   mode === "joining"
                     ? "linear-gradient(135deg, #cc00cc, #660066)"
-                    : isNicknameValid
+                    : isNicknameValid && !isCreating
                     ? "linear-gradient(135deg, #0088cc, #004488)"
                     : "#1f2937",
-                color: isNicknameValid ? "#ffffff" : "#4b5563",
+                color: isNicknameValid && !isCreating ? "#ffffff" : "#4b5563",
                 border: `2px solid ${
                   mode === "joining"
                     ? "#ff00ff"
-                    : isNicknameValid
+                    : isNicknameValid && !isCreating
                     ? "#00aaff"
                     : "#374151"
                 }`,
                 boxShadow:
                   mode === "joining"
                     ? "0 0 10px rgba(255,0,255,0.4)"
-                    : isNicknameValid
+                    : isNicknameValid && !isCreating
                     ? "0 0 10px rgba(0,170,255,0.4)"
                     : "none",
-                cursor: isNicknameValid ? "pointer" : "not-allowed",
+                cursor: isNicknameValid && !isCreating ? "pointer" : "not-allowed",
               }}
               onMouseEnter={(e) => {
-                if (isNicknameValid) {
+                if (isNicknameValid && !isCreating) {
                   (e.target as HTMLButtonElement).style.boxShadow =
                     mode === "joining"
                       ? "0 0 20px rgba(255,0,255,0.8)"
@@ -234,7 +251,7 @@ export default function EntryScreen() {
                 }
               }}
               onMouseLeave={(e) => {
-                if (isNicknameValid) {
+                if (isNicknameValid && !isCreating) {
                   (e.target as HTMLButtonElement).style.boxShadow =
                     mode === "joining"
                       ? "0 0 10px rgba(255,0,255,0.4)"
