@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #111827;
+  --foreground: #f9fafb;
+  --font-retro: var(--font-press-start), "Courier New", monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-retro: var(--font-press-start), "Courier New", monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-retro);
+}
+
+/* Retro pixel font utility */
+.font-retro {
+  font-family: var(--font-retro);
+}
+
+/* Neon glow effects */
+.neon-green {
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+  color: #00ff00;
+}
+
+.neon-cyan {
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  color: #00ffff;
+}
+
+.neon-magenta {
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  color: #ff00ff;
+}
