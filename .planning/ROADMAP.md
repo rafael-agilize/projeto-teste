@@ -45,7 +45,13 @@ Plans:
   3. Player can hold a piece and swap it back; 7-bag randomizer ensures no piece drought
   4. Completed lines clear with animation and score updates for singles/doubles/triples/tetrises/T-spins/combos/back-to-back
   5. Game speed increases each level and the game ends when pieces stack to the top of the board
-**Plans**: TBD
+**Plans:** 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Project scaffold (Vite+TS) + core engine: types, board, pieces, SRS, 7-bag
+- [ ] 02-02-PLAN.md — Game state machine: movement, drops, ghost, hold, lock delay, input handler
+- [ ] 02-03-PLAN.md — Scoring system: T-spin detection, combos, back-to-back, level progression
+- [ ] 02-04-PLAN.md — Canvas renderer, HUD, effects, main loop integration, human verification
 
 ### Phase 3: Multiplayer & Polish
 **Goal**: 2-4 players compete in real time with garbage line mechanics, progressive elimination, and the full retro arcade visual style
@@ -73,5 +79,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Room & Lobby | 0/3 | Planning complete | - |
-| 2. Game Engine | 0/TBD | Not started | - |
+| 2. Game Engine | 0/4 | Planning complete | - |
 | 3. Multiplayer & Polish | 0/4 | Planning complete | - |
