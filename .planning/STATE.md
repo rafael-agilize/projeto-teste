@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-room-lobby-01-PLAN.md
-last_updated: "2026-03-04T20:10:04.488Z"
+stopped_at: Completed 01-room-lobby-02-PLAN.md
+last_updated: "2026-03-04T20:17:00.014Z"
 last_activity: 2026-03-04 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 11
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-room-lobby P01 | 3 | 2 tasks | 7 files |
+| Phase 01-room-lobby P02 | 20 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,9 @@ Recent decisions affecting current work:
 - Last player standing wins (standard battle royale Tetris mechanic)
 - [Phase 01-room-lobby]: Press Start 2P Google Font used for retro arcade aesthetic throughout the app
 - [Phase 01-room-lobby]: Nickname validation fires on blur/submit to avoid disruptive live error messages
+- [Phase 01-room-lobby]: Room page always emits room:join — server returns existing room if player already present (idempotent join)
+- [Phase 01-room-lobby]: Socket singleton shared across EntryScreen and RoomPage to avoid duplicate connections
+- [Phase 01-room-lobby]: SocketProvider wraps room page only (not layout) to defer socket connection until needed
 
 ### Pending Todos
 
@@ -76,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T20:10:04.486Z
-Stopped at: Completed 01-room-lobby-01-PLAN.md
+Last session: 2026-03-04T20:17:00.012Z
+Stopped at: Completed 01-room-lobby-02-PLAN.md
 Resume file: None
