@@ -28,7 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can paste a code or click a link and land in the same room as the creator
   4. Lobby shows every connected player's nickname and their ready status in real time
   5. Host can press Start once at least 2 players have marked themselves ready
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project setup + entry screen with nickname input
+- [ ] 01-02-PLAN.md — Socket.io server + room creation and joining flows
+- [ ] 01-03-PLAN.md — Lobby UI with player cards, ready/start, countdown
 
 ### Phase 2: Game Engine
 **Goal**: A fully correct single-player Tetris game that anyone can play in isolation
@@ -61,6 +66,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Room & Lobby | 0/TBD | Not started | - |
+| 1. Room & Lobby | 0/3 | Planning complete | - |
 | 2. Game Engine | 0/TBD | Not started | - |
 | 3. Multiplayer & Polish | 0/TBD | Not started | - |
